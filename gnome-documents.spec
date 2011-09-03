@@ -6,7 +6,7 @@ Summary:        A document manager application for GNOME
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/0.1/%{name}-%{version}.tar.xz
-Patch0:         0001-Fix-account.get_id-is-not-a-function-error.patch
+Patch0:         gnome-documents-0.1.90-fix_account_props.patch
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
