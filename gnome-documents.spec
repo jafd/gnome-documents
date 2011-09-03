@@ -1,11 +1,12 @@
 Name:           gnome-documents
 Version:        0.1.90
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/0.1/%{name}-%{version}.tar.xz
+Patch0:         0001-Fix-account.get_id-is-not-a-function-error.patch
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
@@ -32,7 +33,7 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
-
+%patch0 -p1
 
 %build
 %configure --disable-static
@@ -76,6 +77,9 @@ fi
 %{_datadir}/gir-1.0
 
 %changelog
+* Sat Sep 03 2011 Elad Alfassa <elad@fedoraproject.org> - 0.1.90-2
+- Fix #735341
+
 * Fri Sep 02 2011 Elad Alfassa <elad@fedoraproject.org> - 0.1.90-1
 - Initial packaging.
 
