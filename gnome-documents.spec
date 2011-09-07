@@ -15,6 +15,7 @@ BuildRequires:  evince-devel
 BuildRequires:  gnome-online-accounts-devel
 BuildRequires:  tracker-devel
 BuildRequires:  desktop-file-utils
+BuildRequires:  clutter-gtk-devel
 
 %description
 gnome-documents is a document manager application for GNOME,
@@ -45,16 +46,22 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.desktop
 %find_lang %{name}
 
 
-%post -p /sbin/ldconfig
+%post
+/sbin/ldconfig
+touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
+
 
 %postun
 /sbin/ldconfig
 if [ $1 -eq 0 ] ; then
+    touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
+    gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
     /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 fi
 
 %posttrans
-    /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
+gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
+/usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 %files -f %{name}.lang
 %doc README AUTHORS NEWS TODO
@@ -68,6 +75,7 @@ fi
 %{_libdir}/girepository-1.0
 %{_datadir}/glib-2.0/schemas/*
 %{_datadir}/applications/*
+%{_datadir}/icons/hicolor/*/apps/gnome-documents.png
 
 %files devel
 %{_libdir}/*.so
