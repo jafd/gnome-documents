@@ -1,12 +1,11 @@
 Name:           gnome-documents
-Version:        0.1.90
-Release:        2%{?dist}
+Version:        0.1.91
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/0.1/%{name}-%{version}.tar.xz
-Patch0:         gnome-documents-0.1.90-fix_account_props.patch
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
@@ -33,7 +32,6 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure --disable-static
@@ -41,7 +39,6 @@ developing applications that use %{name}.
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.desktop
@@ -77,6 +74,9 @@ fi
 %{_datadir}/gir-1.0
 
 %changelog
+* Wed Sep  7 2011 Matthias Clasen <mclasen@redhat.com> - 0.1.91-1
+- Update to 0.1.91
+
 * Sat Sep 03 2011 Elad Alfassa <elad@fedoraproject.org> - 0.1.90-2
 - Fix #735341
 
