@@ -15,6 +15,7 @@ BuildRequires:  evince-devel
 BuildRequires:  gnome-online-accounts-devel
 BuildRequires:  tracker-devel
 BuildRequires:  desktop-file-utils
+BuildRequires:  clutter-gtk-devel
 
 %description
 gnome-documents is a document manager application for GNOME,
