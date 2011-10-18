@@ -1,5 +1,5 @@
 Name:           gnome-documents
-Version:        0.2.0
+Version:        0.2.1
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -64,9 +64,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 %files -f %{name}.lang
-%doc README AUTHORS NEWS TODO
-#FIXME: Upstream doesn't have a copy of the GPL in their tarball.
-# https://bugzilla.gnome.org/show_bug.cgi?id=658042
+%doc README AUTHORS NEWS TODO COPYING
 %{_datadir}/%{name}
 %{_bindir}/%{name}
 %{_libdir}/*.so.*
@@ -82,6 +80,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gir-1.0
 
 %changelog
+* Tue Oct 18 2011 Elad Alfassa <elad@fedoraproject.org> - 0.2.1-1
+- New upstream release
+
 * Mon Sep 26 2011 Elad Alfassa <elad@fedoraproject.org> - 0.2.0-1
 - New upstream release (first stable release)
 
