@@ -1,11 +1,11 @@
 Name:           gnome-documents
-Version:        0.2.1
+Version:        0.3.2
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
-Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/0.2/%{name}-%{version}.tar.xz
+Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/0.3/%{name}-%{version}.tar.xz
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
@@ -80,6 +80,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gir-1.0
 
 %changelog
+* Wed Nov 23 2011 Matthias Clasen <mclasen@redhat.com> - 0.3.2-1
+- Update to 0.3.2
+
 * Tue Oct 18 2011 Elad Alfassa <elad@fedoraproject.org> - 0.2.1-1
 - New upstream release
 
