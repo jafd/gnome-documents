@@ -35,7 +35,7 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-%configure --disable-static
+%configure --disable-static --enable-introspection
 #FIXME: Build fails with  %{?_smp_mflags}.
 make
 
