@@ -22,20 +22,11 @@ gnome-documents is a document manager application for GNOME,
 aiming to be a simple and elegant replacement for using Files to show
 the Documents directory.
 
-%package        devel
-Summary:        Development files for %{name}
-Requires:       %{name} = %{version}-%{release}
-
-%description    devel
-The %{name}-devel package contains libraries and header files for
-developing applications that use %{name}.
-
-
 %prep
 %setup -q
 
 %build
-%configure --disable-static --enable-introspection
+%configure --disable-static
 #FIXME: Build fails with  %{?_smp_mflags}.
 make
 
@@ -67,17 +58,13 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %doc README AUTHORS NEWS TODO COPYING
 %{_datadir}/%{name}
 %{_bindir}/%{name}
-#%{_libdir}/*.so.*
 %{_libexecdir}/*
 %{_datadir}/dbus-1/services/*
-#%{_libdir}/girepository-1.0
 %{_datadir}/glib-2.0/schemas/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
+%{_libdir}/gnome-documents/
 
-%files devel
-#%{_libdir}/*.so
-#%{_datadir}/gir-1.0
 
 %changelog
 * Tue Dec 20 2011 Matthias Clasen <mclasen@redhat.com> - 0.3.3-1
