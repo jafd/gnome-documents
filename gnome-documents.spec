@@ -1,5 +1,5 @@
 Name:           gnome-documents
-Version:        0.3.2
+Version:        0.3.3
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -80,6 +80,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gir-1.0
 
 %changelog
+* Tue Dec 20 2011 Matthias Clasen <mclasen@redhat.com> - 0.3.3-1
+- Update to 0.3.3
+
 * Wed Nov 23 2011 Matthias Clasen <mclasen@redhat.com> - 0.3.2-1
 - Update to 0.3.2
 
