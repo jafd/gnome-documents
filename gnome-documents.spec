@@ -76,8 +76,8 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
 
 %files devel
-%{_libdir}/*.so
-%{_datadir}/gir-1.0
+#%{_libdir}/*.so
+#%{_datadir}/gir-1.0
 
 %changelog
 * Tue Dec 20 2011 Matthias Clasen <mclasen@redhat.com> - 0.3.3-1
