@@ -67,10 +67,10 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %doc README AUTHORS NEWS TODO COPYING
 %{_datadir}/%{name}
 %{_bindir}/%{name}
-%{_libdir}/*.so.*
+#%{_libdir}/*.so.*
 %{_libexecdir}/*
 %{_datadir}/dbus-1/services/*
-%{_libdir}/girepository-1.0
+#%{_libdir}/girepository-1.0
 %{_datadir}/glib-2.0/schemas/*
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
