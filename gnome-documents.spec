@@ -16,6 +16,7 @@ BuildRequires:  gnome-online-accounts-devel
 BuildRequires:  tracker-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  clutter-gtk-devel
+BuildRequires:  gjs-devel
 
 %description
 gnome-documents is a document manager application for GNOME,
