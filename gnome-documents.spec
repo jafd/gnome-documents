@@ -1,6 +1,6 @@
 Name:           gnome-documents
-Version:        0.3.3
-Release:        2%{?dist}
+Version:        0.3.4
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -67,6 +67,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 
 
 %changelog
+* Tue Jan 17 2012 Cosimo Cecchi <cosimoc@redhat.com> - 0.3.4-1
+- Update to 0.3.4
+
 * Fri Jan 13 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
 
