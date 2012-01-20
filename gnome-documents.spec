@@ -1,6 +1,6 @@
 Name:           gnome-documents
 Version:        0.3.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -68,6 +68,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 
 
 %changelog
+* Thu Jan 19 2012 Matthias Clasen <mclasen@redhat.com> - 0.3.4-2
+- Rebuild against new cogl
+
 * Tue Jan 17 2012 Cosimo Cecchi <cosimoc@redhat.com> - 0.3.4-1
 - Update to 0.3.4
 
