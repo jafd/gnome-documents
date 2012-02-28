@@ -65,7 +65,10 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
 %{_libdir}/gnome-documents/
-
+# co-own these directories
+%dir %{_datadir}/gnome-shell
+%dir %{_datadir}/gnome-shell/search-providers
+%{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
 * Sun Feb 26 2012 Matthias Clasen <mclasen@redhat.com> - 0.3.90-1
