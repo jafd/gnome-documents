@@ -1,11 +1,13 @@
 Name:           gnome-documents
-Version:        0.3.4
-Release:        2%{?dist}
+Version:        0.3.92
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/0.3/%{name}-%{version}.tar.xz
+
+Patch0: fix-translations-again.patch
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
@@ -25,6 +27,8 @@ the Documents directory.
 
 %prep
 %setup -q
+
+%patch0 -p1 -b .fix-translations
 
 %build
 %configure --disable-static
@@ -65,9 +69,24 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
 %{_libdir}/gnome-documents/
-
+# co-own these directories
+%dir %{_datadir}/gnome-shell
+%dir %{_datadir}/gnome-shell/search-providers
+%{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Tue Mar 20 2012 Cosimo Cecchi <cosimoc@redhat.com> - 0.3.92-1
+- Update to 0.3.92
+
+* Sat Mar 10 2012 Matthias Clasen <mclasen@redhat.com> - 0.3.91-2
+- Rebuild against new cogl
+
+* Tue Mar 06 2012 Cosimo Cecchi <cosimoc@redhat.com> - 0.3.91-1
+- Update to 0.3.91
+
+* Sun Feb 26 2012 Matthias Clasen <mclasen@redhat.com> - 0.3.90-1
+- Update to 0.3.90
+
 * Thu Jan 19 2012 Matthias Clasen <mclasen@redhat.com> - 0.3.4-2
 - Rebuild against new cogl
 
