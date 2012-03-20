@@ -7,8 +7,6 @@ License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/0.3/%{name}-%{version}.tar.xz
 
-Patch0: fix-desktop-file.patch
-
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
 BuildRequires:  gnome-desktop3-devel
@@ -27,8 +25,6 @@ the Documents directory.
 
 %prep
 %setup -q
-
-%patch0 -p1 -b .fix-desktop-file
 
 %build
 %configure --disable-static
