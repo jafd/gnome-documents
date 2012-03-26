@@ -1,6 +1,8 @@
+%define evince_version 3.3.92
+
 Name:           gnome-documents
 Version:        0.4.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -11,7 +13,7 @@ BuildRequires:  intltool
 BuildRequires:  libgdata-devel
 BuildRequires:  gnome-desktop3-devel
 BuildRequires:  liboauth-devel
-BuildRequires:  evince-devel
+BuildRequires:  evince-devel >= %{evince_version}
 BuildRequires:  gnome-online-accounts-devel
 BuildRequires:  tracker-devel
 BuildRequires:  desktop-file-utils
@@ -71,6 +73,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Mon Mar 26 2012 Cosimo Cecchi <cosimoc@redhat.com> - 0.4.0-2
+- Rebuild against current libevdocument3 soname
+
 * Mon Mar 26 2012 Cosimo Cecchi <cosimoc@redhat.com> - 0.4.0-1
 - Update to 0.4.0
 
