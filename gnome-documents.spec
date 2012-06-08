@@ -21,6 +21,8 @@ BuildRequires:  clutter-gtk-devel
 BuildRequires:  gjs-devel
 BuildRequires:  libzapojit-devel
 
+Patch0: 0001-po-add-missing-semicolon-for-greek-translation.patch
+
 %description
 gnome-documents is a document manager application for GNOME,
 aiming to be a simple and elegant replacement for using Files to show
@@ -28,6 +30,8 @@ the Documents directory.
 
 %prep
 %setup -q
+
+%patch0 -p1 -b .greek-translation
 
 %build
 %configure --disable-static
