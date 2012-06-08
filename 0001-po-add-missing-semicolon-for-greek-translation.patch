@@ -1,0 +1,25 @@
+From e7f8ce2153f8de65c072792c676181997063e46d Mon Sep 17 00:00:00 2001
+From: Cosimo Cecchi <cosimoc@gnome.org>
+Date: Fri, 8 Jun 2012 13:05:37 -0400
+Subject: [PATCH] po: add missing semicolon for greek translation
+
+---
+ po/el.po |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/po/el.po b/po/el.po
+index fe290ff..fd03901 100644
+--- a/po/el.po
++++ b/po/el.po
+@@ -24,7 +24,7 @@ msgstr "Προσεγγίστε,διαχειριστείτε και μοιρασ
+ 
+ #: ../data/gnome-documents.desktop.in.in.h:2
+ msgid "Docs;PDF;Document;"
+-msgstr "Έγγραφα;PDF;Έγγραφο"
++msgstr "Έγγραφα;PDF;Έγγραφο;"
+ 
+ #: ../data/gnome-documents.desktop.in.in.h:3 ../src/mainWindow.js:54
+ #: ../src/mainWindow.js:249
+-- 
+1.7.10.2
+
