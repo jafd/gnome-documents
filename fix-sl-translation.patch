@@ -1,0 +1,25 @@
+From e827a6a169786fd46ab42b968c727ad8c18e45a2 Mon Sep 17 00:00:00 2001
+From: Cosimo Cecchi <cosimoc@gnome.org>
+Date: Fri, 29 Jun 2012 11:46:16 -0400
+Subject: [PATCH] i18n: fix a missing semicolon in Slovenian translation
+
+---
+ po/sl.po |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/po/sl.po b/po/sl.po
+index fe14e34..58f0159 100644
+--- a/po/sl.po
++++ b/po/sl.po
+@@ -33,7 +33,7 @@ msgstr "Upravljanje, dostop in souporaba dokumentov"
+ 
+ #: ../data/gnome-documents.desktop.in.in.h:3
+ msgid "Docs;PDF;Document;"
+-msgstr "Doc;PDF;Dokumenti;Word"
++msgstr "Doc;PDF;Dokumenti;Word;"
+ 
+ #: ../data/org.gnome.documents.gschema.xml.in.h:1
+ #: ../src/application.js:137
+-- 
+1.7.10.4
+
