@@ -1,7 +1,7 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        0.5.3
+Version:        0.5.4
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -21,8 +21,6 @@ BuildRequires:  clutter-gtk-devel
 BuildRequires:  gjs-devel
 BuildRequires:  libzapojit-devel
 
-Patch0: fix-sl-translation.patch
-
 %description
 gnome-documents is a document manager application for GNOME,
 aiming to be a simple and elegant replacement for using Files to show
@@ -30,8 +28,6 @@ the Documents directory.
 
 %prep
 %setup -q
-
-%patch0 -p1 -b .fix-sl-translation
 
 %build
 %configure --disable-static
@@ -78,6 +74,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Tue Jul 17 2012 Richard Hughes <hughsient@gmail.com> - 0.5.4-1
+- Update to 0.5.4
+
 * Wed Jun 27 2012 Cosimo Cecchi <cosimoc@redhat.com> - 0.5.3-1
 - Update to 0.5.3
 
