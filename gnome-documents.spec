@@ -22,6 +22,7 @@ BuildRequires:  gjs-devel
 BuildRequires:  libzapojit-devel
 
 Patch0: 0001-po-fix-Slovenian-translation-for-desktop-file-once-a.patch
+Patch1: 0001-po-fix-another-desktop-file-translation-string.patch
 
 %description
 gnome-documents is a document manager application for GNOME,
@@ -32,6 +33,7 @@ the Documents directory.
 %setup -q
 
 %patch0 -p1 -b .slovenian
+%patch1 -p1 -b .another-translation
 
 %build
 %configure --disable-static
