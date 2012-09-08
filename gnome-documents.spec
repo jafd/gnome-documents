@@ -2,7 +2,7 @@
 
 Name:           gnome-documents
 Version:        3.5.91
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -79,6 +79,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Sun Sep 09 2012 Kalev Lember <kalevlember@gmail.com> - 3.5.91-2
+- Rebuild against new cogl/clutter
+
 * Tue Sep 04 2012 Cosimo Cecchi <cosimoc@redhat.com> - 3.5.91-1
 - Update to 3.5.91
 
