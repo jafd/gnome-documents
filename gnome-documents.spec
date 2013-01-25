@@ -2,7 +2,7 @@
 
 Name:           gnome-documents
 Version:        3.7.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -73,6 +73,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Fri Jan 25 2013 Peter Robinson <pbrobinson@fedoraproject.org> 3.7.4-2
+- Rebuild for new cogl
+
 * Tue Jan 15 2013 Matthias Clasen <mclasen@redhat.com> - 3.7.4-1
 - Update to 3.7.4
 
