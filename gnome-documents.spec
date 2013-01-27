@@ -8,6 +8,7 @@ Summary:        A document manager application for GNOME
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/3.7/%{name}-%{version}.tar.xz
+Patch0:         gnome-documents-fix-desktop.patch
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
@@ -28,6 +29,7 @@ the Documents directory.
 
 %prep
 %setup -q
+%patch0 -p1 -b .fix-desktop
 
 %build
 %configure --disable-static

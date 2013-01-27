@@ -1,0 +1,11 @@
+--- gnome-documents-3.7.4/data/gnome-documents.desktop.orig	2013-01-27 21:35:21.718953949 +0000
++++ gnome-documents-3.7.4/data/gnome-documents.desktop	2013-01-27 21:36:18.580422454 +0000
+@@ -169,7 +169,7 @@
+ Keywords[pt_BR]=Docs;PDF;Documento;
+ Keywords[ru]=Документы;PDF;Документ;
+ Keywords[sk]=Dokumenty;PDF;Dokument;
+-Keywords[sl]=Doc;PDF;Dokumenti;Word
++Keywords[sl]=Doc;PDF;Dokumenti;Word;
+ Keywords[sr]=Документација;ПДФ;Документ;
+ Keywords[sr@latin]=Dokumentacija;PDF;Dokument;
+ Keywords[sv]=Dok;PDF;Dokument;
