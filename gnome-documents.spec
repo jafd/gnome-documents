@@ -21,6 +21,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  clutter-gtk-devel
 BuildRequires:  gjs-devel
 BuildRequires:  libzapojit-devel
+BuildRequires:  webkitgtk3-devel
 
 %description
 gnome-documents is a document manager application for GNOME,
