@@ -1,8 +1,8 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        3.7.4
-Release:        2%{?dist}
+Version:        3.7.5
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -75,6 +75,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Thu Feb 07 2013 Richard Hughes <rhughes@redhat.com> - 3.7.5-1
+- Update to 3.7.5
+
 * Fri Jan 25 2013 Peter Robinson <pbrobinson@fedoraproject.org> 3.7.4-2
 - Rebuild for new cogl
 
