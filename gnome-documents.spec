@@ -2,7 +2,7 @@
 
 Name:           gnome-documents
 Version:        3.7.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -76,6 +76,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Thu Feb 21 2013 Kalev Lember <kalevlember@gmail.com> - 3.7.5-3
+- Rebuilt for cogl soname bump
+
 * Wed Feb 20 2013 Kalev Lember <kalevlember@gmail.com> - 3.7.5-2
 - Rebuilt for libgnome-desktop soname bump
 
