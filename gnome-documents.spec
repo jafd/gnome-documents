@@ -1,14 +1,13 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        3.7.5
-Release:        3%{?dist}
+Version:        3.7.90
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/3.7/%{name}-%{version}.tar.xz
-Patch0:         gnome-documents-fix-desktop.patch
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
@@ -18,7 +17,6 @@ BuildRequires:  evince-devel >= %{evince_version}
 BuildRequires:  gnome-online-accounts-devel
 BuildRequires:  tracker-devel
 BuildRequires:  desktop-file-utils
-BuildRequires:  clutter-gtk-devel
 BuildRequires:  gjs-devel
 BuildRequires:  libzapojit-devel
 BuildRequires:  webkitgtk3-devel
@@ -30,7 +28,6 @@ the Documents directory.
 
 %prep
 %setup -q
-%patch0 -p1 -b .fix-desktop
 
 %build
 %configure --disable-static
@@ -76,6 +73,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Tue Feb 26 2013 Kalev Lember <kalevlember@gmail.com> - 3.7.90-1
+- Update to 3.7.90
+
 * Thu Feb 21 2013 Kalev Lember <kalevlember@gmail.com> - 3.7.5-3
 - Rebuilt for cogl soname bump
 
