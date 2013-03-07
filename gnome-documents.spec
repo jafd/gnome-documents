@@ -9,6 +9,9 @@ License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/3.7/%{name}-%{version}.tar.xz
 
+# https://bugzilla.gnome.org/show_bug.cgi?id=695404
+Patch0: gnome-documents-keywords.patch
+
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
 BuildRequires:  gnome-desktop3-devel
@@ -29,6 +32,7 @@ the Documents directory.
 
 %prep
 %setup -q
+%patch0 -p1 -b .keywords
 
 %build
 %configure --disable-static

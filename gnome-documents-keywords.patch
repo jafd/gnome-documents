@@ -1,0 +1,12 @@
+diff -up gnome-documents-3.7.91/po/sl.po.keywords gnome-documents-3.7.91/po/sl.po
+--- gnome-documents-3.7.91/po/sl.po.keywords	2013-03-07 16:29:49.027612088 -0500
++++ gnome-documents-3.7.91/po/sl.po	2013-03-07 16:29:54.119611906 -0500
+@@ -33,7 +33,7 @@ msgstr "Upravljanje, dostop in souporaba
+ 
+ #: ../data/gnome-documents.desktop.in.in.h:3
+ msgid "Docs;PDF;Document;"
+-msgstr "Doc;PDF;Dokumenti;Word"
++msgstr "Doc;PDF;Dokumenti;Word;"
+ 
+ #: ../data/org.gnome.documents.gschema.xml.in.h:1
+ #: ../src/resources/app-menu.ui.h:1
