@@ -1,16 +1,13 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        3.7.91
+Version:        3.7.92
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/3.7/%{name}-%{version}.tar.xz
-
-# https://bugzilla.gnome.org/show_bug.cgi?id=695404
-Patch0: gnome-documents-keywords.patch
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
@@ -32,7 +29,6 @@ the Documents directory.
 
 %prep
 %setup -q
-%patch0 -p1 -b .keywords
 
 %build
 %configure --disable-static
@@ -78,6 +74,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Wed Mar 20 2013 Kalev Lember <kalevlember@gmail.com> - 3.7.92-1
+- Update to 3.7.92
+
 * Thu Mar  7 2013 Matthias Clasen <mclasen@redhat.com> - 3.7.91-1
 - Update to 3.7.91
 
