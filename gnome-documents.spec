@@ -22,6 +22,7 @@ BuildRequires:  libzapojit-devel
 BuildRequires:  webkitgtk3-devel
 BuildRequires:  itstool
 BuildRequires:  inkscape
+BuildRequires:  poppler-utils
 
 %description
 gnome-documents is a document manager application for GNOME,
