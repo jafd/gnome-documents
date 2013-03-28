@@ -24,6 +24,8 @@ BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
 
+Patch0: 0001-getting-started-fix-parallel-builds.patch
+
 %description
 gnome-documents is a document manager application for GNOME,
 aiming to be a simple and elegant replacement for using Files to show
@@ -31,6 +33,8 @@ the Documents directory.
 
 %prep
 %setup -q
+
+%patch0 -p1 -b .parallel-builds
 
 %build
 %configure --disable-static --enable-getting-started
