@@ -1,8 +1,8 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        3.8.0
-Release:        2%{?dist}
+Version:        3.8.1
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -24,8 +24,6 @@ BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
 
-Patch0: 0001-getting-started-fix-parallel-builds.patch
-
 %description
 gnome-documents is a document manager application for GNOME,
 aiming to be a simple and elegant replacement for using Files to show
@@ -33,8 +31,6 @@ the Documents directory.
 
 %prep
 %setup -q
-
-%patch0 -p1 -b .parallel-builds
 
 %build
 %configure --disable-static --enable-getting-started
@@ -80,6 +76,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Tue Apr 16 2013 Richard Hughes <rhughes@redhat.com> - 3.8.1-1
+- Update to 3.8.1
+
 * Thu Mar 28 2013 Cosimo Cecchi <cosimoc@gnome.org> - 3.8.0-2
 - Enable generation of getting-started tutorial PDF
 
