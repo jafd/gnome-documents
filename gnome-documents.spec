@@ -23,6 +23,7 @@ BuildRequires:  webkitgtk3-devel
 BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
+BuildRequires:  docbook-style-xsl
 
 %description
 gnome-documents is a document manager application for GNOME,
