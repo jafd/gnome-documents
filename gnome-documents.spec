@@ -24,6 +24,7 @@ BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
 BuildRequires:  docbook-style-xsl
+Requires:       gnome-online-miners
 
 %description
 gnome-documents is a document manager application for GNOME,
@@ -65,7 +66,6 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %doc README AUTHORS NEWS TODO COPYING
 %{_datadir}/%{name}
 %{_bindir}/%{name}
-%{_libexecdir}/*
 %{_datadir}/dbus-1/services/*
 %{_datadir}/glib-2.0/schemas/*
 %{_datadir}/applications/*
@@ -80,6 +80,8 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %changelog
 * Tue Jul 16 2013 Richard Hughes <rhughes@redhat.com> - 3.9.4-1
 - Update to 3.9.4
+- Fix %%files because the miners were split out.
+- Add Requires: gnome-online-miners.
 
 * Fri Jun 21 2013 Kalev Lember <kalevlember@gmail.com> - 3.9.3-1
 - Update to 3.9.3
