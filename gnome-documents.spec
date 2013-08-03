@@ -2,7 +2,7 @@
 
 Name:           gnome-documents
 Version:        3.9.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -78,6 +78,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.9.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
 * Tue Jul 16 2013 Richard Hughes <rhughes@redhat.com> - 3.9.4-1
 - Update to 3.9.4
 - Fix %%files because the miners were split out.
