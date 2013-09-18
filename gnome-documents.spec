@@ -1,7 +1,7 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        3.9.91
+Version:        3.9.92
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -66,6 +66,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %doc README AUTHORS NEWS TODO COPYING
 %{_datadir}/%{name}
 %{_bindir}/%{name}
+%{_datadir}/appdata/
 %{_datadir}/dbus-1/services/*
 %{_datadir}/glib-2.0/schemas/*
 %{_datadir}/applications/*
@@ -78,6 +79,10 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Wed Sep 18 2013 Kalev Lember <kalevlember@gmail.com> - 3.9.92-1
+- Update to 3.9.92
+- Include the appdata file
+
 * Tue Sep 03 2013 Kalev Lember <kalevlember@gmail.com> - 3.9.91-1
 - Update to 3.9.91
 
