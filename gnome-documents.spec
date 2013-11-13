@@ -1,7 +1,7 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        3.10.0
+Version:        3.10.1
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -79,6 +79,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Wed Nov 13 2013 Debarshi Ray <rishi@fedoraproject.org> - 3.10.1-1
+- Update to 3.10.1
+
 * Wed Sep 25 2013 Kalev Lember <kalevlember@gmail.com> - 3.10.0-1
 - Update to 3.10.0
 
