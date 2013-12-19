@@ -1,7 +1,7 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        3.11.2
+Version:        3.11.3
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -15,7 +15,7 @@ BuildRequires:  gnome-desktop3-devel
 BuildRequires:  liboauth-devel
 BuildRequires:  evince-devel >= %{evince_version}
 BuildRequires:  gnome-online-accounts-devel
-BuildRequires:  tracker-devel
+BuildRequires:  tracker-devel >= 0.17.0
 BuildRequires:  desktop-file-utils
 BuildRequires:  gjs-devel
 BuildRequires:  libzapojit-devel
@@ -79,6 +79,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
 
 %changelog
+* Thu Dec 19 2013 Debarshi Ray <rishi@fedoraproject.org> - 3.11.3-1
+- Update to 3.11.3
+
 * Mon Nov 25 2013 Richard Hughes <rhughes@redhat.com> - 3.11.2-1
 - Update to 3.11.2
 
