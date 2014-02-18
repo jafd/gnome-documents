@@ -41,7 +41,7 @@ make %{?_smp_mflags}
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
-desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.desktop
+desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documents.desktop
 %find_lang %{name}
 
 
@@ -72,11 +72,12 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/applications/*
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
 %{_libdir}/gnome-documents/
+%{_libexecdir}/gnome-documents-service
 %{_mandir}/man1/%{name}.1.gz
 # co-own these directories
 %dir %{_datadir}/gnome-shell
 %dir %{_datadir}/gnome-shell/search-providers
-%{_datadir}/gnome-shell/search-providers/gnome-documents-search-provider.ini
+%{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
 * Tue Feb 18 2014 Richard Hughes <rhughes@redhat.com> - 3.11.90-1
