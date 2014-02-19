@@ -2,7 +2,7 @@
 
 Name:           gnome-documents
 Version:        3.11.90
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -80,6 +80,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
+* Wed Feb 19 2014 Richard Hughes <rhughes@redhat.com> - 3.11.90-2
+- Rebuilt for gnome-desktop soname bump
+
 * Tue Feb 18 2014 Richard Hughes <rhughes@redhat.com> - 3.11.90-1
 - Update to 3.11.90
 
