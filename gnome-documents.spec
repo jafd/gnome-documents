@@ -1,13 +1,13 @@
 %define evince_version 3.3.92
 
 Name:           gnome-documents
-Version:        3.12.0
-Release:        2%{?dist}
+Version:        3.13.1
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
-Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/3.12/%{name}-%{version}.tar.xz
+Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/3.13/%{name}-%{version}.tar.xz
 
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
@@ -80,6 +80,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
+* Fri May 02 2014 Kalev Lember <kalevlember@gmail.com> - 3.13.1-1
+- Update to 3.13.1
+
 * Wed Apr 16 2014 Adam Williamson <awilliam@redhat.com> - 3.12.0-2
 - rebuild for new libgdata
 
