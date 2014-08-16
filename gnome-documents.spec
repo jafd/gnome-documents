@@ -2,7 +2,7 @@
 
 Name:           gnome-documents
 Version:        3.13.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -79,6 +79,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
+* Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.13.4-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
+
 * Tue Jul 22 2014 Kalev Lember <kalevlember@gmail.com> - 3.13.4-2
 - Rebuilt for gobject-introspection 1.41.4
 
