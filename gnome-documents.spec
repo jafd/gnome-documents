@@ -1,4 +1,5 @@
-%define evince_version 3.7.4
+%define evince_version 3.13.3
+%define gtk3_version 3.13.2
 
 Name:           gnome-documents
 Version:        3.13.91
@@ -9,11 +10,12 @@ License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://ftp.acc.umu.se/pub/GNOME/sources/%{name}/3.13/%{name}-%{version}.tar.xz
 
+BuildRequires:  evince-devel >= %{evince_version}
+BuildRequires:  gtk3-devel >= %{gtk3_version}
 BuildRequires:  intltool
 BuildRequires:  libgdata-devel
 BuildRequires:  gnome-desktop3-devel
 BuildRequires:  liboauth-devel
-BuildRequires:  evince-devel >= %{evince_version}
 BuildRequires:  gnome-online-accounts-devel
 BuildRequires:  tracker-devel >= 0.17.0
 BuildRequires:  desktop-file-utils
@@ -24,6 +26,9 @@ BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
 BuildRequires:  docbook-style-xsl
+
+Requires:       evince-libs%{?_isa} >= %{evince_version}
+Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
 
 %description
@@ -81,6 +86,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %changelog
 * Wed Sep 03 2014 Kalev Lember <kalevlember@gmail.com> - 3.13.91-3
 - Update to 3.13.91
+- Set minimum required evince and gtk3 versions
 
 * Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.13.4-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
