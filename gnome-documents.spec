@@ -2,8 +2,8 @@
 %define gtk3_version 3.13.2
 
 Name:           gnome-documents
-Version:        3.13.91
-Release:        3%{?dist}
+Version:        3.13.92
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -84,6 +84,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
+* Tue Sep 16 2014 Kalev Lember <kalevlember@gmail.com> - 3.13.92-1
+- Update to 3.13.92
+
 * Wed Sep 03 2014 Kalev Lember <kalevlember@gmail.com> - 3.13.91-3
 - Update to 3.13.91
 - Set minimum required evince and gtk3 versions
