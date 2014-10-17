@@ -2,7 +2,7 @@
 %define gtk3_version 3.13.2
 
 Name:           gnome-documents
-Version:        3.14.0
+Version:        3.14.1
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -84,6 +84,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
+* Fri Oct 17 2014 Kalev Lember <kalevlember@gmail.com> - 3.14.1-1
+- Update to 3.14.1
+
 * Wed Sep 24 2014 Kalev Lember <kalevlember@gmail.com> - 3.14.0-1
 - Update to 3.14.0
 
