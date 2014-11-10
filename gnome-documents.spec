@@ -3,7 +3,7 @@
 
 Name:           gnome-documents
 Version:        3.14.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -30,7 +30,6 @@ BuildRequires:  docbook-style-xsl
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
-Requires:       unoconv
 
 %description
 gnome-documents is a document manager application for GNOME,
@@ -85,6 +84,10 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
+* Mon Nov 10 2014 Debarshi Ray <rishi@fedoraproject.org> - 3.14.1-3
+- Revert unoconv dependency because it pulls in other LO applications. We will
+  rely on comps for the time being.
+
 * Fri Oct 24 2014 Debarshi Ray <rishi@fedoraproject.org> - 3.14.1-2
 - Require unoconv.
 
