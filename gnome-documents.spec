@@ -2,8 +2,8 @@
 %define gtk3_version 3.13.2
 
 Name:           gnome-documents
-Version:        3.14.1
-Release:        3%{?dist}
+Version:        3.14.2
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -84,6 +84,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
+* Thu Nov 13 2014 Kalev Lember <kalevlember@gmail.com> - 3.14.2-1
+- Update to 3.14.2
+
 * Mon Nov 10 2014 Debarshi Ray <rishi@fedoraproject.org> - 3.14.1-3
 - Revert unoconv dependency because it pulls in other LO applications. We will
   rely on comps for the time being.
