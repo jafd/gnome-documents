@@ -2,13 +2,13 @@
 %define gtk3_version 3.13.2
 
 Name:           gnome-documents
-Version:        3.14.2
+Version:        3.15.1
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
-Source0:        http://download.gnome.org/sources/%{name}/3.14/%{name}-%{version}.tar.xz
+Source0:        http://download.gnome.org/sources/%{name}/3.15/%{name}-%{version}.tar.xz
 
 BuildRequires:  evince-devel >= %{evince_version}
 BuildRequires:  gtk3-devel >= %{gtk3_version}
@@ -52,18 +52,22 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 
 %post
 /sbin/ldconfig
+touch --no-create %{_datadir}/icons/Adwaita >&/dev/null || :
 touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
 
 
 %postun
 /sbin/ldconfig
 if [ $1 -eq 0 ] ; then
+    touch --no-create %{_datadir}/icons/Adwaita >&/dev/null || :
     touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
+    gtk-update-icon-cache %{_datadir}/icons/Adwaita >&/dev/null || :
     gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
     /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 fi
 
 %posttrans
+gtk-update-icon-cache %{_datadir}/icons/Adwaita >&/dev/null || :
 gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
@@ -75,6 +79,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/dbus-1/services/*
 %{_datadir}/glib-2.0/schemas/*
 %{_datadir}/applications/*
+%{_datadir}/icons/Adwaita/scalable/apps/gnome-documents-symbolic.svg
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
 %{_libdir}/gnome-documents/
 %{_mandir}/man1/%{name}.1.gz
@@ -84,6 +89,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
 %changelog
+* Wed Nov 26 2014 Kalev Lember <kalevlember@gmail.com> - 3.15.1-1
+- Update to 3.15.1
+
 * Thu Nov 13 2014 Kalev Lember <kalevlember@gmail.com> - 3.14.2-1
 - Update to 3.14.2
 
