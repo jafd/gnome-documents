@@ -3,7 +3,7 @@
 
 Name:           gnome-documents
 Version:        3.15.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -47,6 +47,7 @@ Summary:        A e-books manager application for GNOME
 Requires:       %{name}-libs = %{version}-%{release}
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
+Requires:       gnome-epub-thumbnailer
 
 %description -n gnome-books
 gnome-books is an e-books manager application for GNOME,
@@ -125,6 +126,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/icons/hicolor/*/apps/gnome-books.png
 
 %changelog
+* Wed Jan 28 2015 Bastien Nocera <bnocera@redhat.com> 3.15.2-2
+- Require gnome-epub-thumbnailer to go with the Books app
+
 * Wed Jan 28 2015 Bastien Nocera <bnocera@redhat.com> 3.15.2-1
 - Update to 3.15.2
 
