@@ -2,7 +2,7 @@
 %define gtk3_version 3.13.2
 
 Name:           gnome-documents
-Version:        3.15.1
+Version:        3.15.2
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -30,9 +30,26 @@ BuildRequires:  docbook-style-xsl
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
+Requires:       %{name}-libs = %{version}-%{release}
 
 %description
 gnome-documents is a document manager application for GNOME,
+aiming to be a simple and elegant replacement for using Files to show
+the Documents directory.
+
+%package libs
+Summary: Common libraries and data files for %{name}
+%description libs
+%{summary}.
+
+%package -n gnome-books
+Summary:        A e-books manager application for GNOME
+Requires:       %{name}-libs = %{version}-%{release}
+Requires:       evince-libs%{?_isa} >= %{evince_version}
+Requires:       gtk3%{?_isa} >= %{gtk3_version}
+
+%description -n gnome-books
+gnome-books is an e-books manager application for GNOME,
 aiming to be a simple and elegant replacement for using Files to show
 the Documents directory.
 
@@ -52,9 +69,11 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 
 %post
 /sbin/ldconfig
-touch --no-create %{_datadir}/icons/Adwaita >&/dev/null || :
 touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
 
+%post -n gnome-books
+/sbin/ldconfig
+touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
 
 %postun
 /sbin/ldconfig
@@ -71,24 +90,44 @@ gtk-update-icon-cache %{_datadir}/icons/Adwaita >&/dev/null || :
 gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
+%posttrans -n gnome-books
+gtk-update-icon-cache %{_datadir}/icons/Adwaita >&/dev/null || :
+gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
+/usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
+
 %files -f %{name}.lang
 %doc README AUTHORS NEWS TODO COPYING
-%{_datadir}/%{name}
 %{_bindir}/%{name}
 %{_datadir}/appdata/org.gnome.Documents.appdata.xml
-%{_datadir}/dbus-1/services/*
-%{_datadir}/glib-2.0/schemas/*
-%{_datadir}/applications/*
-%{_datadir}/icons/Adwaita/scalable/apps/gnome-documents-symbolic.svg
+%{_datadir}/dbus-1/services/org.gnome.Documents.service
+%{_datadir}/glib-2.0/schemas/org.gnome.documents.gschema.xml
+%{_datadir}/applications/org.gnome.Documents.desktop
+%{_datadir}/icons/hicolor/scalable/apps/gnome-documents-symbolic.svg
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
-%{_libdir}/gnome-documents/
 %{_mandir}/man1/%{name}.1.gz
 # co-own these directories
 %dir %{_datadir}/gnome-shell
 %dir %{_datadir}/gnome-shell/search-providers
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
 
+%files libs
+%{_datadir}/%{name}
+%{_datadir}/glib-2.0/schemas/org.gnome.Documents.enums.xml
+%{_libdir}/gnome-documents/
+
+%files -n gnome-books
+%doc README AUTHORS NEWS TODO COPYING
+%{_bindir}/gnome-books
+%{_datadir}/dbus-1/services/org.gnome.Books.service
+%{_datadir}/glib-2.0/schemas/org.gnome.books.gschema.xml
+%{_datadir}/applications/org.gnome.Books.desktop
+%{_datadir}/icons/hicolor/scalable/apps/gnome-books-symbolic.svg
+%{_datadir}/icons/hicolor/*/apps/gnome-books.png
+
 %changelog
+* Wed Jan 28 2015 Bastien Nocera <bnocera@redhat.com> 3.15.2-1
+- Update to 3.15.2
+
 * Wed Nov 26 2014 Kalev Lember <kalevlember@gmail.com> - 3.15.1-1
 - Update to 3.15.1
 
