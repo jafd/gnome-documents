@@ -21,7 +21,7 @@ BuildRequires:  tracker-devel >= 0.17.0
 BuildRequires:  desktop-file-utils
 BuildRequires:  gjs-devel
 BuildRequires:  libzapojit-devel
-BuildRequires:  webkitgtk3-devel
+BuildRequires:  webkitgtk4-devel
 BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
