@@ -2,26 +2,29 @@
 %define gtk3_version 3.13.2
 
 Name:           gnome-documents
-Version:        3.15.2
-Release:        2%{?dist}
+Version:        3.15.90
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://download.gnome.org/sources/%{name}/3.15/%{name}-%{version}.tar.xz
 
-BuildRequires:  evince-devel >= %{evince_version}
-BuildRequires:  gtk3-devel >= %{gtk3_version}
+BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
+BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
+BuildRequires:  pkgconfig(webkitgtk-3.0)
+BuildRequires:  pkgconfig(gtk-3.0) >= %{gtk3_version}
+BuildRequires:  pkgconfig(gjs-1.0)
+BuildRequires:  pkgconfig(tracker-control-1.0) >= 0.17.0
+BuildRequires:  pkgconfig(tracker-sparql-1.0) >= 0.17.0
+BuildRequires:  pkgconfig(goa-1.0)
+BuildRequires:  pkgconfig(gnome-desktop-3.0)
+BuildRequires:  pkgconfig(libgdata)
+BuildRequires:  pkgconfig(zapojit-0.0)
+BuildRequires:  pkgconfig(libsoup-2.4)
 BuildRequires:  intltool
-BuildRequires:  libgdata-devel
-BuildRequires:  gnome-desktop3-devel
 BuildRequires:  liboauth-devel
-BuildRequires:  gnome-online-accounts-devel
-BuildRequires:  tracker-devel >= 0.17.0
 BuildRequires:  desktop-file-utils
-BuildRequires:  gjs-devel
-BuildRequires:  libzapojit-devel
-BuildRequires:  webkitgtk4-devel
 BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
@@ -97,7 +100,8 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 %files -f %{name}.lang
-%doc README AUTHORS NEWS TODO COPYING
+%license COPYING
+%doc README AUTHORS NEWS TODO
 %{_bindir}/%{name}
 %{_datadir}/appdata/org.gnome.Documents.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Documents.service
@@ -105,7 +109,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/applications/org.gnome.Documents.desktop
 %{_datadir}/icons/hicolor/scalable/apps/gnome-documents-symbolic.svg
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
-%{_mandir}/man1/%{name}.1.gz
+%{_mandir}/man1/%{name}.1*
 # co-own these directories
 %dir %{_datadir}/gnome-shell
 %dir %{_datadir}/gnome-shell/search-providers
@@ -126,6 +130,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/icons/hicolor/*/apps/gnome-books.png
 
 %changelog
+* Fri Feb 20 2015 Matthias Clasen <mclasen@redhat.com> 3.15.90-1
+- Update to 3.15.90
+
 * Wed Jan 28 2015 Bastien Nocera <bnocera@redhat.com> 3.15.2-2
 - Require gnome-epub-thumbnailer to go with the Books app
 
