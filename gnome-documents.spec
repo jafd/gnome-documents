@@ -13,7 +13,7 @@ Source0:        http://download.gnome.org/sources/%{name}/3.15/%{name}-%{version
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(webkitgtk-3.0)
-BuildRequires:  pkgconfig(gtk-3.0) >= %{gtk3_version}
+BuildRequires:  pkgconfig(gtk+-3.0) >= %{gtk3_version}
 BuildRequires:  pkgconfig(gjs-1.0)
 BuildRequires:  pkgconfig(tracker-control-1.0) >= 0.17.0
 BuildRequires:  pkgconfig(tracker-sparql-1.0) >= 0.17.0
