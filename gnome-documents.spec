@@ -109,7 +109,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/applications/org.gnome.Documents.desktop
 %{_datadir}/icons/hicolor/scalable/apps/gnome-documents-symbolic.svg
 %{_datadir}/icons/hicolor/*/apps/gnome-documents.png
-%{_mandir}/man1/%{name}.1*
+%{_mandir}/man1/gnome-documents.1*
 # co-own these directories
 %dir %{_datadir}/gnome-shell
 %dir %{_datadir}/gnome-shell/search-providers
@@ -128,6 +128,8 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/applications/org.gnome.Books.desktop
 %{_datadir}/icons/hicolor/scalable/apps/gnome-books-symbolic.svg
 %{_datadir}/icons/hicolor/*/apps/gnome-books.png
+%{_mandir}/man1/gnome-books.1*
+%{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
 * Fri Feb 20 2015 Matthias Clasen <mclasen@redhat.com> 3.15.90-1
