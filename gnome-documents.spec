@@ -3,12 +3,14 @@
 
 Name:           gnome-documents
 Version:        3.15.90
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://live.gnome.org/Design/Apps/Documents
 Source0:        http://download.gnome.org/sources/%{name}/3.15/%{name}-%{version}.tar.xz
+
+Patch0:         0001-search-Unbreak-books-mode.patch
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
@@ -59,6 +61,7 @@ the Documents directory.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure --disable-static --enable-getting-started
@@ -132,6 +135,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Mon Feb 23 2015 Debarshi Ray <rishi@fedoraproject.org> 3.15.90-2
+- Backport patch to fix books mode
+
 * Fri Feb 20 2015 Matthias Clasen <mclasen@redhat.com> 3.15.90-1
 - Update to 3.15.90
 
