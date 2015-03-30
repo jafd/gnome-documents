@@ -3,7 +3,7 @@
 
 Name:           gnome-documents
 Version:        3.16.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -29,6 +29,7 @@ BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
 BuildRequires:  docbook-style-xsl
+BuildRequires:  libappstream-glib
 
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
@@ -70,6 +71,16 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documents.desktop
 %find_lang %{name} --with-gnome
 
+# Update the screenshot shown in the software center
+#
+# NOTE: It would be *awesome* if this file was pushed upstream.
+#
+# See http://people.freedesktop.org/~hughsient/appdata/#screenshots for more details.
+#
+appstream-util replace-screenshots $RPM_BUILD_ROOT%{_datadir}/appdata/org.gnome.Documents.appdata.xml \
+  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/org.gnome.Documents/a.png \
+  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/org.gnome.Documents/b.png \
+  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/org.gnome.Documents/c.png 
 
 %post
 /sbin/ldconfig
@@ -132,6 +143,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Mon Mar 30 2015 Richard Hughes <rhughes@redhat.com> - 3.16.0-2
+- Use better AppData screenshots
+
 * Mon Mar 23 2015 Kalev Lember <kalevlember@gmail.com> - 3.16.0-1
 - Update to 3.16.0
 
