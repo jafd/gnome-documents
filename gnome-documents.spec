@@ -34,7 +34,7 @@ BuildRequires:  libappstream-glib
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
-Requires:       %{name}-libs = %{version}-%{release}
+Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 
 %description
 gnome-documents is a document manager application for GNOME,
@@ -48,7 +48,7 @@ Summary: Common libraries and data files for %{name}
 
 %package -n gnome-books
 Summary:        A e-books manager application for GNOME
-Requires:       %{name}-libs = %{version}-%{release}
+Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-epub-thumbnailer
@@ -148,6 +148,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 - Update to 3.17.90
 - Use make_install macro
 - Mark gnome-books COPYING file as %%license
+- Tighten -libs deps with the _isa macro
 
 * Wed Jul 22 2015 David King <amigadave@amigadave.com> - 3.17.2-3
 - Bump for new gnome-desktop3
