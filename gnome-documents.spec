@@ -132,7 +132,8 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_libdir}/gnome-documents/
 
 %files -n gnome-books
-%doc README AUTHORS NEWS TODO COPYING
+%license COPYING
+%doc README AUTHORS NEWS TODO
 %{_bindir}/gnome-books
 %{_datadir}/dbus-1/services/org.gnome.Books.service
 %{_datadir}/glib-2.0/schemas/org.gnome.books.gschema.xml
@@ -146,6 +147,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 * Fri Aug 21 2015 Kalev Lember <klember@redhat.com> - 3.17.90-1
 - Update to 3.17.90
 - Use make_install macro
+- Mark gnome-books COPYING file as %%license
 
 * Wed Jul 22 2015 David King <amigadave@amigadave.com> - 3.17.2-3
 - Bump for new gnome-desktop3
