@@ -66,7 +66,7 @@ the Documents directory.
 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=$RPM_BUILD_ROOT
+%make_install
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documents.desktop
 %find_lang %{name} --with-gnome
@@ -145,6 +145,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %changelog
 * Fri Aug 21 2015 Kalev Lember <klember@redhat.com> - 3.17.90-1
 - Update to 3.17.90
+- Use make_install macro
 
 * Wed Jul 22 2015 David King <amigadave@amigadave.com> - 3.17.2-3
 - Bump for new gnome-desktop3
