@@ -7,8 +7,8 @@ Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
-URL:            https://live.gnome.org/Design/Apps/Documents
-Source0:        http://download.gnome.org/sources/%{name}/3.18/%{name}-%{version}.tar.xz
+URL:            https://wiki.gnome.org/Apps/Documents
+Source0:        https://download.gnome.org/sources/%{name}/3.18/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
@@ -146,6 +146,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %changelog
 * Tue Sep 22 2015 Kalev Lember <klember@redhat.com> - 3.18.0.1-1
 - Update to 3.18.0.1
+- Update URL
 
 * Tue Sep 22 2015 Kalev Lember <klember@redhat.com> - 3.18.0-1
 - Update to 3.18.0
