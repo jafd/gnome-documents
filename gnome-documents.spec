@@ -2,7 +2,7 @@
 %define gtk3_version 3.19.1
 
 Name:           gnome-documents
-Version:        3.19.3
+Version:        3.19.4
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -144,6 +144,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Wed Jan 20 2016 Kalev Lember <klember@redhat.com> - 3.19.4-1
+- Update to 3.19.4
+
 * Thu Dec 17 2015 Kalev Lember <klember@redhat.com> - 3.19.3-1
 - Update to 3.19.3
 
