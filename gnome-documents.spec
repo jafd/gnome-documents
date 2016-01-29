@@ -3,7 +3,7 @@
 
 Name:           gnome-documents
 Version:        3.19.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -29,7 +29,6 @@ BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
 BuildRequires:  docbook-style-xsl
-BuildRequires:  libappstream-glib
 
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
@@ -70,17 +69,6 @@ make %{?_smp_mflags}
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documents.desktop
 %find_lang %{name} --with-gnome
-
-# Update the screenshot shown in the software center
-#
-# NOTE: It would be *awesome* if this file was pushed upstream.
-#
-# See http://people.freedesktop.org/~hughsient/appdata/#screenshots for more details.
-#
-appstream-util replace-screenshots $RPM_BUILD_ROOT%{_datadir}/appdata/org.gnome.Documents.appdata.xml \
-  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/org.gnome.Documents/a.png \
-  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/org.gnome.Documents/b.png \
-  https://raw.githubusercontent.com/hughsie/fedora-appstream/master/screenshots-extra/org.gnome.Documents/c.png 
 
 %post
 /sbin/ldconfig
@@ -144,6 +132,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Fri Jan 29 2016 Debarshi Ray <rishi@fedoraproject.org> - 3.19.4-2
+- Use upstreamed screenshots
+
 * Wed Jan 20 2016 Kalev Lember <klember@redhat.com> - 3.19.4-1
 - Update to 3.19.4
 
