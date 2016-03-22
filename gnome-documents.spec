@@ -2,13 +2,13 @@
 %define gtk3_version 3.19.1
 
 Name:           gnome-documents
-Version:        3.19.4
-Release:        3%{?dist}
+Version:        3.20.0
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Documents
-Source0:        https://download.gnome.org/sources/%{name}/3.19/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.20/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
@@ -132,6 +132,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Tue Mar 22 2016 Kalev Lember <klember@redhat.com> - 3.20.0-1
+- Update to 3.20.0
+
 * Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 3.19.4-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
