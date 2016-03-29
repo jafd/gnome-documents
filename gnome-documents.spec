@@ -3,7 +3,7 @@
 
 Name:           gnome-documents
 Version:        3.20.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -33,6 +33,7 @@ BuildRequires:  docbook-style-xsl
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
+Requires:       libreofficekit
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 
 %description
@@ -132,6 +133,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Tue Mar 29 2016 Debarshi Ray <rishi@fedoraproject.org> - 3.20.0-2
+- Add 'Requires: libreofficekit' (RH #1321380)
+
 * Tue Mar 22 2016 Kalev Lember <klember@redhat.com> - 3.20.0-1
 - Update to 3.20.0
 
