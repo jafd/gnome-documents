@@ -87,6 +87,14 @@ if [ $1 -eq 0 ] ; then
     /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 fi
 
+%postun -n gnome-books
+/sbin/ldconfig
+if [ $1 -eq 0 ] ; then
+    touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
+    gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
+    /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
+fi
+
 %posttrans
 gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
@@ -131,6 +139,7 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %changelog
 * Wed Aug 17 2016 Kalev Lember <klember@redhat.com> - 3.20.1-1
 - Update to 3.20.1
+- Add missing gnome-books postun script
 
 * Tue Mar 29 2016 Debarshi Ray <rishi@fedoraproject.org> - 3.20.0-2
 - Add 'Requires: libreofficekit' (RH #1321380)
