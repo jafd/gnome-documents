@@ -2,8 +2,8 @@
 %define gtk3_version 3.19.1
 
 Name:           gnome-documents
-Version:        3.20.0
-Release:        2%{?dist}
+Version:        3.20.1
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -133,6 +133,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Wed Aug 17 2016 Kalev Lember <klember@redhat.com> - 3.20.1-1
+- Update to 3.20.1
+
 * Tue Mar 29 2016 Debarshi Ray <rishi@fedoraproject.org> - 3.20.0-2
 - Add 'Requires: libreofficekit' (RH #1321380)
 
