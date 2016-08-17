@@ -82,20 +82,16 @@ touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
 %postun
 /sbin/ldconfig
 if [ $1 -eq 0 ] ; then
-    touch --no-create %{_datadir}/icons/Adwaita >&/dev/null || :
     touch --no-create %{_datadir}/icons/hicolor >&/dev/null || :
-    gtk-update-icon-cache %{_datadir}/icons/Adwaita >&/dev/null || :
     gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
     /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 fi
 
 %posttrans
-gtk-update-icon-cache %{_datadir}/icons/Adwaita >&/dev/null || :
 gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
 %posttrans -n gnome-books
-gtk-update-icon-cache %{_datadir}/icons/Adwaita >&/dev/null || :
 gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 /usr/bin/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
