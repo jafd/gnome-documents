@@ -54,6 +54,7 @@ Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-epub-thumbnailer
+Requires:       libgepub%{?_isa}
 
 %description -n gnome-books
 gnome-books is an e-books manager application for GNOME,
