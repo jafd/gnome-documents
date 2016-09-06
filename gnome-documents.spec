@@ -3,7 +3,7 @@
 
 Name:           gnome-documents
 Version:        3.21.90
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -34,6 +34,7 @@ BuildRequires:  docbook-style-xsl
 Requires:       evince-libs%{?_isa} >= %{evince_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
+Requires:       libgepub%{?_isa}
 Requires:       libreofficekit
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 
@@ -140,6 +141,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Tue Sep 06 2016 Kalev Lember <klember@redhat.com> - 3.21.90-2
+- Add missing libgepub runtime dep
+
 * Sat Sep 03 2016 Kalev Lember <klember@redhat.com> - 3.21.90-1
 - Update to 3.21.90
 
