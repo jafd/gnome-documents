@@ -2,8 +2,8 @@
 %define gtk3_version 3.19.1
 
 Name:           gnome-documents
-Version:        3.21.90
-Release:        2%{?dist}
+Version:        3.21.92
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -63,8 +63,6 @@ the Documents directory.
 
 %prep
 %setup -q
-# Hack to build with libgepub 0.4
-sed -i -e '/Gepub/ s/0\.3/0.4/g' configure
 
 %build
 %configure --disable-static --enable-getting-started
@@ -142,6 +140,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Tue Sep 13 2016 Kalev Lember <klember@redhat.com> - 3.21.92-1
+- Update to 3.21.92
+
 * Tue Sep 06 2016 Kalev Lember <klember@redhat.com> - 3.21.90-2
 - Add missing libgepub runtime dep
 
