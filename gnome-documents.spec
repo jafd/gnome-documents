@@ -2,13 +2,13 @@
 %define gtk3_version 3.19.1
 
 Name:           gnome-documents
-Version:        3.21.92
+Version:        3.22.0
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Documents
-Source0:        https://download.gnome.org/sources/%{name}/3.21/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.22/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
@@ -140,6 +140,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Tue Sep 20 2016 Kalev Lember <klember@redhat.com> - 3.22.0-1
+- Update to 3.22.0
+
 * Tue Sep 13 2016 Kalev Lember <klember@redhat.com> - 3.21.92-1
 - Update to 3.21.92
 
