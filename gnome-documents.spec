@@ -3,7 +3,7 @@
 
 Name:           gnome-documents
 Version:        3.24.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -38,6 +38,8 @@ Requires:       libgepub%{?_isa}
 Requires:       libreofficekit
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 
+Patch0:         0001-preview-make-sure-to-create-all-actions-before-widge.patch
+
 %description
 gnome-documents is a document manager application for GNOME,
 aiming to be a simple and elegant replacement for using Files to show
@@ -63,6 +65,7 @@ the Documents directory.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure --disable-static --enable-getting-started
@@ -140,6 +143,10 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Thu Mar 30 2017 Bastien Nocera <bnocera@redhat.com> - 3.24.0-2
++ gnome-documents-3.24.0-2
+- Fix comics display
+
 * Wed Mar 22 2017 Kalev Lember <klember@redhat.com> - 3.24.0-1
 - Update to 3.24.0
 
