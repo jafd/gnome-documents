@@ -3,7 +3,7 @@
 
 Name:           gnome-documents
 Version:        3.24.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -39,6 +39,8 @@ Requires:       libreofficekit
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 
 Patch0:         0001-preview-make-sure-to-create-all-actions-before-widge.patch
+Patch1:         0001-documents-factor-out-a-common-function.patch
+Patch2:         0002-pdf-loader-make-sure-to-cancel-load-job.patch
 
 %description
 gnome-documents is a document manager application for GNOME,
@@ -143,6 +145,10 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Fri Mar 31 2017 Bastien Nocera <bnocera@redhat.com> - 3.24.0-3
++ gnome-documents-3.24.0-3
+- Fix possible crash handling alternatively ePubs and Comics
+
 * Thu Mar 30 2017 Bastien Nocera <bnocera@redhat.com> - 3.24.0-2
 + gnome-documents-3.24.0-2
 - Fix comics display
