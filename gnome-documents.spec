@@ -1,20 +1,21 @@
 %define evince_version 3.13.3
-%define gtk3_version 3.19.1
+%define gjs_version 1.48.0
+%define gtk3_version 3.22.10
 
 Name:           gnome-documents
-Version:        3.24.1
+Version:        3.25.1
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Documents
-Source0:        https://download.gnome.org/sources/%{name}/3.24/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.25/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(webkit2gtk-4.0)
 BuildRequires:  pkgconfig(gtk+-3.0) >= %{gtk3_version}
-BuildRequires:  pkgconfig(gjs-1.0)
+BuildRequires:  pkgconfig(gjs-1.0) >= %{gjs_version}
 BuildRequires:  pkgconfig(tracker-control-1.0) >= 0.17.0
 BuildRequires:  pkgconfig(tracker-sparql-1.0) >= 0.17.0
 BuildRequires:  pkgconfig(goa-1.0)
@@ -32,6 +33,7 @@ BuildRequires:  poppler-utils
 BuildRequires:  docbook-style-xsl
 
 Requires:       evince-libs%{?_isa} >= %{evince_version}
+Requires:       gjs%{?_isa} >= %{gjs_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
 Requires:       libgepub%{?_isa}
@@ -140,6 +142,10 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Mon May 01 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.25.1-1
+- Update to 3.25.1
+- Update the gjs and gtk3 requirements
+
 * Wed Apr 12 2017 Kalev Lember <klember@redhat.com> - 3.24.1-1
 - Update to 3.24.1
 
