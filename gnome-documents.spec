@@ -1,9 +1,9 @@
 %define evince_version 3.13.3
 %define gjs_version 1.48.0
-%define gtk3_version 3.22.10
+%define gtk3_version 3.22.15
 
 Name:           gnome-documents
-Version:        3.25.1
+Version:        3.25.3
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -142,6 +142,10 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Wed Jun 21 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.25.3-1
+- Update to 3.25.3
+- Update the gtk3 requirement
+
 * Mon May 01 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.25.1-1
 - Update to 3.25.1
 - Update the gjs and gtk3 requirements
