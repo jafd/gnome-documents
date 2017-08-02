@@ -4,7 +4,7 @@
 
 Name:           gnome-documents
 Version:        3.25.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -142,6 +142,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 3.25.3-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
+
 * Wed Jul 26 2017 Fedora Release Engineering <releng@fedoraproject.org> - 3.25.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
