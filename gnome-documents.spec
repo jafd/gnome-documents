@@ -1,10 +1,11 @@
 %define evince_version 3.13.3
 %define gjs_version 1.48.0
 %define gtk3_version 3.22.15
+%define tracker_version 0.17.0
 
 Name:           gnome-documents
-Version:        3.25.3
-Release:        3%{?dist}
+Version:        3.25.4
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -16,8 +17,8 @@ BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(webkit2gtk-4.0)
 BuildRequires:  pkgconfig(gtk+-3.0) >= %{gtk3_version}
 BuildRequires:  pkgconfig(gjs-1.0) >= %{gjs_version}
-BuildRequires:  pkgconfig(tracker-control-1.0) >= 0.17.0
-BuildRequires:  pkgconfig(tracker-sparql-1.0) >= 0.17.0
+BuildRequires:  pkgconfig(tracker-control-2.0) >= %{tracker_version}
+BuildRequires:  pkgconfig(tracker-sparql-2.0) >= %{tracker_version}
 BuildRequires:  pkgconfig(goa-1.0)
 BuildRequires:  pkgconfig(gnome-desktop-3.0)
 BuildRequires:  pkgconfig(libgdata)
@@ -142,6 +143,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Wed Aug 09 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.25.4-1
+- Update to 3.25.4
+
 * Wed Aug 02 2017 Fedora Release Engineering <releng@fedoraproject.org> - 3.25.3-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
