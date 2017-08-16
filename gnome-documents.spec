@@ -4,7 +4,7 @@
 %define tracker_version 0.17.0
 
 Name:           gnome-documents
-Version:        3.25.4
+Version:        3.25.90
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -143,6 +143,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Wed Aug 16 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.25.90-1
+- Update to 3.25.90
+
 * Wed Aug 09 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.25.4-1
 - Update to 3.25.4
 
