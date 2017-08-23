@@ -1,10 +1,11 @@
 %define evince_version 3.13.3
+%define gettext_version 0.19.8
 %define gjs_version 1.48.0
 %define gtk3_version 3.22.15
 %define tracker_version 0.17.0
 
 Name:           gnome-documents
-Version:        3.25.90
+Version:        3.25.91
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -25,15 +26,16 @@ BuildRequires:  pkgconfig(libgdata)
 BuildRequires:  pkgconfig(libgepub)
 BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:  pkgconfig(libsoup-2.4)
-BuildRequires:  intltool
 BuildRequires:  liboauth-devel
 BuildRequires:  desktop-file-utils
+BuildRequires:  gettext >= %{gettext_version}
 BuildRequires:  itstool
 BuildRequires:  inkscape
 BuildRequires:  poppler-utils
 BuildRequires:  docbook-style-xsl
 
 Requires:       evince-libs%{?_isa} >= %{evince_version}
+Requires:       gettext%{?isa} >= %{gettext_version}
 Requires:       gjs%{?_isa} >= %{gjs_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
@@ -55,6 +57,8 @@ Summary: Common libraries and data files for %{name}
 Summary:        A e-books manager application for GNOME
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 Requires:       evince-libs%{?_isa} >= %{evince_version}
+Requires:       gettext%{?isa} >= %{gettext_version}
+Requires:       gjs%{?_isa} >= %{gjs_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-epub-thumbnailer
 Requires:       libgepub%{?_isa}
@@ -143,6 +147,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Wed Aug 23 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.25.91-1
+- Update to 3.25.91
+
 * Wed Aug 16 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.25.90-1
 - Update to 3.25.90
 
