@@ -6,7 +6,7 @@
 
 Name:           gnome-documents
 Version:        3.26.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -42,6 +42,7 @@ Requires:       gnome-online-miners
 Requires:       libgepub%{?_isa}
 Requires:       libreofficekit
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
+Requires:       tracker-miners
 
 %description
 gnome-documents is a document manager application for GNOME,
@@ -147,6 +148,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Wed Sep 20 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.26.0-2
+- Add run-time dependency on tracker-miners
+
 * Thu Sep 14 2017 Kalev Lember <klember@redhat.com> - 3.26.0-1
 - Update to 3.26.0
 
