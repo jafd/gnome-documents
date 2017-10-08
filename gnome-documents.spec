@@ -5,8 +5,8 @@
 %define tracker_version 0.17.0
 
 Name:           gnome-documents
-Version:        3.26.0
-Release:        2%{?dist}
+Version:        3.26.1
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -148,6 +148,9 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor >&/dev/null || :
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Sun Oct 08 2017 Kalev Lember <klember@redhat.com> - 3.26.1-1
+- Update to 3.26.1
+
 * Wed Sep 20 2017 Debarshi Ray <rishi@fedoraproject.org> - 3.26.0-2
 - Add run-time dependency on tracker-miners
 
