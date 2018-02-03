@@ -6,7 +6,7 @@
 
 Name:           gnome-documents
 Version:        3.26.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -82,9 +82,7 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documents.desktop
 %find_lang %{name} --with-gnome
 
-%post libs -p /sbin/ldconfig
-
-%postun libs -p /sbin/ldconfig
+%ldconfig_scriptlets libs
 
 %files -f %{name}.lang
 %license COPYING
@@ -120,6 +118,9 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Sat Feb 03 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 3.26.1-3
+- Switch to %%ldconfig_scriptlets
+
 * Sat Jan 06 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 3.26.1-2
 - Remove obsolete scriptlets
 
