@@ -82,8 +82,6 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documents.desktop
 %find_lang %{name} --with-gnome
 
-%ldconfig_scriptlets libs
-
 %files -f %{name}.lang
 %license COPYING
 %doc README AUTHORS NEWS TODO
@@ -120,6 +118,7 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 %changelog
 * Mon Feb 05 2018 Kalev Lember <klember@redhat.com> - 3.26.2-1
 - Update to 3.26.2
+- Drop ldconfig scriptlets
 
 * Sat Feb 03 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 3.26.1-3
 - Switch to %%ldconfig_scriptlets
