@@ -5,8 +5,8 @@
 %define tracker_version 0.17.0
 
 Name:           gnome-documents
-Version:        3.26.1
-Release:        3%{?dist}
+Version:        3.26.2
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -118,6 +118,9 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 %{_datadir}/appdata/org.gnome.Books.appdata.xml
 
 %changelog
+* Mon Feb 05 2018 Kalev Lember <klember@redhat.com> - 3.26.2-1
+- Update to 3.26.2
+
 * Sat Feb 03 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 3.26.1-3
 - Switch to %%ldconfig_scriptlets
 
