@@ -79,8 +79,10 @@ the Documents directory.
 
 %install
 %meson_install
-desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documents.desktop
 %find_lang %{name} --with-gnome
+
+%check
+desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Documents.desktop
 
 %files -f %{name}.lang
 %license COPYING
@@ -119,6 +121,7 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 * Mon Mar 12 2018 Kalev Lember <klember@redhat.com> - 3.27.92-1
 - Update to 3.27.92
 - Switch to the meson build system
+- Move desktop file validation to check section
 
 * Tue Feb 13 2018 Björn Esser <besser82@fedoraproject.org> - 3.26.2-3
 - Rebuild against newer gnome-desktop3 package
