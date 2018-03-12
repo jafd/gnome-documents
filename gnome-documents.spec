@@ -2,16 +2,16 @@
 %define gettext_version 0.19.8
 %define gjs_version 1.48.0
 %define gtk3_version 3.22.15
-%define tracker_version 0.17.0
+%define tracker_version 0.17.3
 
 Name:           gnome-documents
-Version:        3.26.2
-Release:        3%{?dist}
+Version:        3.27.92
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Documents
-Source0:        https://download.gnome.org/sources/%{name}/3.26/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.27/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
@@ -31,6 +31,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  gettext >= %{gettext_version}
 BuildRequires:  itstool
 BuildRequires:  inkscape
+BuildRequires:  meson
 BuildRequires:  poppler-utils
 BuildRequires:  docbook-style-xsl
 
@@ -73,12 +74,11 @@ the Documents directory.
 %setup -q
 
 %build
-%configure --disable-static --enable-getting-started
-make %{?_smp_mflags}
+%meson -Dgetting_started=true
+%meson_build
 
 %install
-%make_install
-find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
+%meson_install
 desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documents.desktop
 %find_lang %{name} --with-gnome
 
@@ -86,7 +86,6 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 %license COPYING
 %doc README AUTHORS NEWS TODO
 %{_bindir}/%{name}
-%{_datadir}/appdata/org.gnome.Documents.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Documents.service
 %{_datadir}/glib-2.0/schemas/org.gnome.documents.gschema.xml
 %{_datadir}/applications/org.gnome.Documents.desktop
@@ -97,6 +96,7 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 %dir %{_datadir}/gnome-shell
 %dir %{_datadir}/gnome-shell/search-providers
 %{_datadir}/gnome-shell/search-providers/org.gnome.Documents.search-provider.ini
+%{_datadir}/metainfo/org.gnome.Documents.appdata.xml
 
 %files libs
 %{_datadir}/%{name}
@@ -113,9 +113,13 @@ desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/org.gnome.Documen
 %{_datadir}/icons/hicolor/*/apps/org.gnome.Books.png
 %{_datadir}/icons/hicolor/scalable/apps/org.gnome.Books-symbolic.svg
 %{_mandir}/man1/gnome-books.1*
-%{_datadir}/appdata/org.gnome.Books.appdata.xml
+%{_datadir}/metainfo/org.gnome.Books.appdata.xml
 
 %changelog
+* Mon Mar 12 2018 Kalev Lember <klember@redhat.com> - 3.27.92-1
+- Update to 3.27.92
+- Switch to the meson build system
+
 * Tue Feb 13 2018 Björn Esser <besser82@fedoraproject.org> - 3.26.2-3
 - Rebuild against newer gnome-desktop3 package
 
