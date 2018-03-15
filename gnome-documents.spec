@@ -3,10 +3,11 @@
 %define gjs_version 1.48.0
 %define gtk3_version 3.22.15
 %define tracker_version 0.17.3
+%define libgepub_version 0.6
 
 Name:           gnome-documents
 Version:        3.27.92
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -23,7 +24,7 @@ BuildRequires:  pkgconfig(tracker-sparql-2.0) >= %{tracker_version}
 BuildRequires:  pkgconfig(goa-1.0)
 BuildRequires:  pkgconfig(gnome-desktop-3.0)
 BuildRequires:  pkgconfig(libgdata)
-BuildRequires:  pkgconfig(libgepub)
+BuildRequires:  pkgconfig(libgepub-0.6) >= %{libgepub_version}
 BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:  pkgconfig(libsoup-2.4)
 BuildRequires:  liboauth-devel
@@ -40,7 +41,7 @@ Requires:       gettext%{?isa} >= %{gettext_version}
 Requires:       gjs%{?_isa} >= %{gjs_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
-Requires:       libgepub%{?_isa}
+Requires:       libgepub%{?_isa} >= %{libgepub_version}
 Requires:       libreofficekit
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 Requires:       tracker-miners
@@ -63,7 +64,7 @@ Requires:       gettext%{?isa} >= %{gettext_version}
 Requires:       gjs%{?_isa} >= %{gjs_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-epub-thumbnailer
-Requires:       libgepub%{?_isa}
+Requires:       libgepub%{?_isa} >= %{libgepub_version}
 
 %description -n gnome-books
 gnome-books is an e-books manager application for GNOME,
@@ -118,6 +119,9 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_datadir}/metainfo/org.gnome.Books.appdata.xml
 
 %changelog
+* Thu Mar 15 2018 Kalev Lember <klember@redhat.com> - 3.27.92-2
+- Require libgepub 0.6
+
 * Mon Mar 12 2018 Kalev Lember <klember@redhat.com> - 3.27.92-1
 - Update to 3.27.92
 - Switch to the meson build system
