@@ -6,13 +6,13 @@
 %define libgepub_version 0.6
 
 Name:           gnome-documents
-Version:        3.27.92
-Release:        2%{?dist}
+Version:        3.28.0
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Documents
-Source0:        https://download.gnome.org/sources/%{name}/3.27/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.28/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
@@ -119,6 +119,9 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_datadir}/metainfo/org.gnome.Books.appdata.xml
 
 %changelog
+* Fri Mar 16 2018 Kalev Lember <klember@redhat.com> - 3.28.0-1
+- Update to 3.28.0
+
 * Thu Mar 15 2018 Kalev Lember <klember@redhat.com> - 3.27.92-2
 - Require libgepub 0.6
 
