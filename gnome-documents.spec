@@ -6,7 +6,7 @@
 %define libgepub_version 0.6
 
 Name:           gnome-documents
-Version:        3.30.0
+Version:        3.30.1
 Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
@@ -119,6 +119,9 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_datadir}/metainfo/org.gnome.Books.appdata.xml
 
 %changelog
+* Mon Jan 21 2019 Kalev Lember <klember@redhat.com> - 3.30.1-1
+- Update to 3.30.1
+
 * Wed Sep 12 2018 Kalev Lember <klember@redhat.com> - 3.30.0-1
 - Update to 3.30.0
 
