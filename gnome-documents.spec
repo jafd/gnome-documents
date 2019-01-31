@@ -7,7 +7,7 @@
 
 Name:           gnome-documents
 Version:        3.30.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -119,6 +119,9 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_datadir}/metainfo/org.gnome.Books.appdata.xml
 
 %changelog
+* Thu Jan 31 2019 Fedora Release Engineering <releng@fedoraproject.org> - 3.30.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Mon Jan 21 2019 Kalev Lember <klember@redhat.com> - 3.30.1-1
 - Update to 3.30.1
 
