@@ -3,16 +3,15 @@
 %define gjs_version 1.48.0
 %define gtk3_version 3.22.15
 %define tracker_version 0.17.3
-%define libgepub_version 0.6
 
 Name:           gnome-documents
-Version:        3.30.1
-Release:        2%{?dist}
+Version:        3.31.90
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Documents
-Source0:        https://download.gnome.org/sources/%{name}/3.30/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.31/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
@@ -24,7 +23,6 @@ BuildRequires:  pkgconfig(tracker-sparql-2.0) >= %{tracker_version}
 BuildRequires:  pkgconfig(goa-1.0)
 BuildRequires:  pkgconfig(gnome-desktop-3.0)
 BuildRequires:  pkgconfig(libgdata)
-BuildRequires:  pkgconfig(libgepub-0.6) >= %{libgepub_version}
 BuildRequires:  pkgconfig(zapojit-0.0)
 BuildRequires:  pkgconfig(libsoup-2.4)
 BuildRequires:  liboauth-devel
@@ -41,7 +39,6 @@ Requires:       gettext%{?isa} >= %{gettext_version}
 Requires:       gjs%{?_isa} >= %{gjs_version}
 Requires:       gtk3%{?_isa} >= %{gtk3_version}
 Requires:       gnome-online-miners
-Requires:       libgepub%{?_isa} >= %{libgepub_version}
 Requires:       libreofficekit
 Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
 Requires:       tracker-miners
@@ -55,21 +52,6 @@ the Documents directory.
 Summary: Common libraries and data files for %{name}
 %description libs
 %{summary}.
-
-%package -n gnome-books
-Summary:        A e-books manager application for GNOME
-Requires:       %{name}-libs%{?_isa} = %{version}-%{release}
-Requires:       evince-libs%{?_isa} >= %{evince_version}
-Requires:       gettext%{?isa} >= %{gettext_version}
-Requires:       gjs%{?_isa} >= %{gjs_version}
-Requires:       gtk3%{?_isa} >= %{gtk3_version}
-Requires:       gnome-epub-thumbnailer
-Requires:       libgepub%{?_isa} >= %{libgepub_version}
-
-%description -n gnome-books
-gnome-books is an e-books manager application for GNOME,
-aiming to be a simple and elegant replacement for using Files to show
-the Documents directory.
 
 %prep
 %setup -q
@@ -106,19 +88,13 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_datadir}/glib-2.0/schemas/org.gnome.Documents.enums.xml
 %{_libdir}/gnome-documents/
 
-%files -n gnome-books
-%license COPYING
-%doc README AUTHORS NEWS TODO
-%{_bindir}/gnome-books
-%{_datadir}/dbus-1/services/org.gnome.Books.service
-%{_datadir}/glib-2.0/schemas/org.gnome.books.gschema.xml
-%{_datadir}/applications/org.gnome.Books.desktop
-%{_datadir}/icons/hicolor/*/apps/org.gnome.Books.png
-%{_datadir}/icons/hicolor/scalable/apps/org.gnome.Books-symbolic.svg
-%{_mandir}/man1/gnome-books.1*
-%{_datadir}/metainfo/org.gnome.Books.appdata.xml
-
 %changelog
+* Tue Feb 19 2019 Bastien Nocera <bnocera@redhat.com> - 3.31.90-1
++ gnome-documents-3.31.90-1
+- Update to 3.31.90
+- Remove gnome-books subpackage, it has been obsoleted in
+  fedora-obsolete-packages (#1678652)
+
 * Thu Jan 31 2019 Fedora Release Engineering <releng@fedoraproject.org> - 3.30.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
