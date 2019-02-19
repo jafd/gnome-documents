@@ -74,8 +74,8 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_datadir}/dbus-1/services/org.gnome.Documents.service
 %{_datadir}/glib-2.0/schemas/org.gnome.documents.gschema.xml
 %{_datadir}/applications/org.gnome.Documents.desktop
-%{_datadir}/icons/hicolor/*/apps/org.gnome.Documents.png
-%{_datadir}/icons/hicolor/scalable/apps/org.gnome.Documents-symbolic.svg
+%{_datadir}/icons/hicolor/*/apps/org.gnome.Documents.svg
+%{_datadir}/icons/hicolor/symbolic/apps/org.gnome.Documents-symbolic.svg
 %{_mandir}/man1/gnome-documents.1*
 # co-own these directories
 %dir %{_datadir}/gnome-shell
