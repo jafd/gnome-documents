@@ -5,8 +5,8 @@
 %define tracker_version 0.17.3
 
 Name:           gnome-documents
-Version:        3.31.90
-Release:        2%{?dist}
+Version:        3.31.92
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -89,6 +89,9 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_libdir}/gnome-documents/
 
 %changelog
+* Sun Mar 03 2019 Kalev Lember <klember@redhat.com> - 3.31.92-1
+- Update to 3.31.92
+
 * Tue Feb 19 2019 Kalev Lember <klember@redhat.com> - 3.31.90-2
 - Rebuilt against fixed atk (#1626575)
 
