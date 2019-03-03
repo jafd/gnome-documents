@@ -69,7 +69,7 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 
 %files -f %{name}.lang
 %license COPYING
-%doc README AUTHORS NEWS TODO
+%doc README.md AUTHORS NEWS TODO
 %{_bindir}/%{name}
 %{_datadir}/dbus-1/services/org.gnome.Documents.service
 %{_datadir}/glib-2.0/schemas/org.gnome.documents.gschema.xml
