@@ -5,13 +5,13 @@
 %define tracker_version 0.17.3
 
 Name:           gnome-documents
-Version:        3.32.0
-Release:        3%{?dist}
+Version:        3.33.90
+Release:        1%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Documents
-Source0:        https://download.gnome.org/sources/%{name}/3.32/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/%{name}/3.33/%{name}-%{version}.tar.xz
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
@@ -89,6 +89,9 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_libdir}/gnome-documents/
 
 %changelog
+* Tue Aug 20 2019 Kalev Lember <klember@redhat.com> - 3.33.90-1
+- Update to 3.33.90
+
 * Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 3.32.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
