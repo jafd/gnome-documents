@@ -6,7 +6,7 @@
 
 Name:           gnome-documents
 Version:        3.34.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A document manager application for GNOME
 
 License:        GPLv2+
@@ -89,6 +89,9 @@ desktop-file-validate $RPM_BUILD_ROOT%{_datadir}/applications/org.gnome.Document
 %{_libdir}/gnome-documents/
 
 %changelog
+* Thu Jan 16 2020 Kalev Lember <klember@redhat.com> - 3.34.0-2
+- Rebuilt for libgnome-desktop soname bump
+
 * Thu Oct 24 2019 Kalev Lember <klember@redhat.com> - 3.34.0-1
 - Update to 3.34.0
 
