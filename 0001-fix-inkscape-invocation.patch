@@ -1,0 +1,13 @@
+diff --git a/getting-started/meson.build b/getting-started/meson.build
+index 4cb4fe7..4b87e2f 100644
+--- a/getting-started/meson.build
++++ b/getting-started/meson.build
+@@ -21,7 +21,7 @@ foreach lingua: linguas
+       source,
+       input: join_paths(lingua, source + '.svg'),
+       output: source + '.pdf',
+-      command: [inkscape, '-z', '-A', '@OUTPUT@', '@INPUT@']
++      command: [inkscape, '-z', '-o', '@OUTPUT@', '@INPUT@']
+     )
+   endforeach
+ 

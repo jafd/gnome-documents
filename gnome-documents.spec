@@ -12,6 +12,7 @@ Summary:        A document manager application for GNOME
 License:        GPLv2+
 URL:            https://wiki.gnome.org/Apps/Documents
 Source0:        https://download.gnome.org/sources/%{name}/3.34/%{name}-%{version}.tar.xz
+Patch0:         0001-fix-inkscape-invocation.patch
 
 BuildRequires:  pkgconfig(evince-document-3.0) >= %{evince_version}
 BuildRequires:  pkgconfig(evince-view-3.0) >= %{evince_version}
